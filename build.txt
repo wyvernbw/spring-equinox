@@ -1,0 +1,3 @@
+displayName = Spring Equinox
+author = wyvern, CPQ, LemonBadge, itnom
+version = 0.1
