@@ -1,28 +1,28 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace springEquinox.Items
 {
-    public class Gaytlyngun : ModItem
+    public class deez : ModItem
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Penis, lol");
+            // DisplayName.SetDefault("equinoxSword"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            Tooltip.SetDefault("Super idol");
         }
 
         public override void SetDefaults()
         {
-            Item.damage = 9999999;
+            Item.damage = 1000000;
             Item.DamageType = DamageClass.Melee;
             Item.width = 100;
-            Item.height = 20;
-            Item.useTime =10;
+            Item.height = 100;
+            Item.useTime = 50;
             Item.useAnimation = 20;
             Item.useStyle = 1;
-            Item.knockBack = 10000000;
-            Item.value = 1;
+            Item.knockBack = 6;
+            Item.value = 10000;
             Item.rare = 2;
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
@@ -35,21 +35,5 @@ namespace springEquinox.Items
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
         }
-
-        public override void MeleeEffects(Player player, Rectangle hitbox)
-        {
-            public int timer=0;
-
-            player.velocity.X += 4.0f * player.direction;
-            while(timer<60)
-            {
-              ++timer;
-            }
-            player.velocity.X = 0f;
-
-
-        }
-
     }
-
 }
