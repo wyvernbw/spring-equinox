@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace springEquinox.Items
 {
-    public class equinoxSword : ModItem
+    public class deez : ModItem
     {
         public override void SetStaticDefaults()
         {
