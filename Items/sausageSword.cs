@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -35,5 +36,9 @@ namespace springEquinox.Items
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
 		}
+
+        public override void MeleeEffects(Player player, Rectangle hitbox) {
+            player.velocity.X += 10.0f * player.direction;
+        }
 	}
 }
