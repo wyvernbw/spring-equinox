@@ -18,8 +18,8 @@ namespace springEquinox.Items
             Item.DamageType = DamageClass.Melee;
             Item.width = 100;
             Item.height = 20;
-            Item.useTime =10;
-            Item.useAnimation = 20;
+            Item.useTime = 60;
+            Item.useAnimation = 40;
             Item.useStyle = 1;
             Item.knockBack = 10000000;
             Item.value = 1;
@@ -48,8 +48,11 @@ namespace springEquinox.Items
         {
             mp = player.GetModPlayer<DashPlayer>();
 
-
-            if (!mp.DashingActive) return;
+            if (!mp.DashingActive) 
+            {
+                return;
+                player.armorEffectDrawShadowEOCShield = false;
+            }
 
             player.eocDash = mp.DashTimer;
 			player.armorEffectDrawShadowEOCShield = true;
@@ -57,7 +60,8 @@ namespace springEquinox.Items
             // player.velocity.X += mp.DashVelocity * player.direction;
             if(mp.DashTimer == DashPlayer.MAX_DASH_TIMER)
 			{	
-				player.velocity.X += mp.DashVelocity * player.direction;
+                Vector2 dir = (Main.MouseWorld - player.Center).SafeNormalize(Vector2.UnitY);
+                player.velocity += mp.DashVelocity * dir;
 			}
 
 			//Decrement the timers
